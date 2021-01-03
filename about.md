@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-subtitle: 人情冷暖已看透，赤子之心永不丢。
+subtitle: 人情世故要看透，赤子之心永不丢。
 permalink: /about/
 ---
 
