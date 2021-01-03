@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-subtitle: 人情世故要看透，赤子之心永不丢。
+subtitle: SOFTWARE ENGINEER & MINIMALSM
 permalink: /about/
 ---
 
