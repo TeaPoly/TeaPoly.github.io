@@ -3,7 +3,7 @@ layout: post
 title:  "运用 SIMD 指令集加速神经网络推理"
 subtitle: "NEON/SSE 在向量加法上的应用"
 date:   2021-01-02 11:00:45
-categories: [tool]
+categories: [tech]
 ---
 
 神经网络的推理中会涉及大量的向量或矩阵运算，在 PC 端我们通常会调用一些如 OpenBLAS、IntelMKL 等性能较好的向量加速库，在 ARM 芯片上也有自家的 CMSIS 加速库。而这些库的底层除了利用处理器的并行化能力，还会调用指令集优化代码。

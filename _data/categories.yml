@@ -1,8 +1,5 @@
-- slug: design
-  name: Design
+- slug: life
+  name: 生活
 
-- slug: tools
-  name: Tools
-
-- slug: productivity
-  name: Productivity
+- slug: tech
+  name: 技术
