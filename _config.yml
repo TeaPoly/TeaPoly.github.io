@@ -8,7 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://teapoly.github.io" # the base hostname & protocol for your site
 
 author:
-  fullname: Lekai Huang
+  fullname: Lucky Wong
   github: teapoly
 
 # google_analytics: 'UA-XXXXXXXX-X'
