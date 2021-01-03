@@ -22,7 +22,7 @@ ___
 
 下面是一个基础版本，当我们在优化函数时，一个正确的参考函数尤为重要（此函数输出可作为做 GTest 测试单元的参考输出），而最简单的实现方式就是一个好的开始。
 
-```
+```c
 void tpd_vsadd(const float* x, const float* y, float* z, int n) {
   int i = 0;
   for (i = 0; i < n; i++) {
@@ -33,7 +33,7 @@ void tpd_vsadd(const float* x, const float* y, float* z, int n) {
 
 我们知道指针的访问会比数组索引效率来的更高一些，所以我将上述代码的数组索引修改成指针的访问的形式。
 
-```
+```c
 void tpd_vsadd(const float* x, const float* y, float* z, int n) {
   int blocks = n;
 
@@ -48,7 +48,7 @@ void tpd_vsadd(const float* x, const float* y, float* z, int n) {
 
 后续在进行 SIMD 优化时，SSE2 指令和 NEON 指令会将一次性加载 4 个浮点计算，所以我们可以将一个 loop 每次运算一次向量加修改成一次运行4次向量加，这样可以快速的适应上 SIMD 的优化。同时由于减少了条件判断的打断，运算速度上也会比上一个版本速度要快些。 另外，需要注意的是我们接口中的参数 n 不能保证是整除 4 的，因此需要将剩余的部分做上一个版本一样的向量加操作。
 
-```
+```c
 void tpd_vsadd(const float* x, const float* y, float* z, int n) {
   int blocks;
 
@@ -88,7 +88,7 @@ void tpd_vsadd(const float* x, const float* y, float* z, int n) {
 
 - SSE/AVX 的 API 的说明文档可以参考：[Intel® Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)
 
-```
+```c
 #include <emmintrin.h>
 
 void tpd_vsadd(const float* x, const float* y, float* z, int n) {
@@ -131,7 +131,7 @@ void tpd_vsadd(const float* x, const float* y, float* z, int n) {
 
 - PDF 文档：[IHI0073B_arm_neon_intrinsics_ref.pdf](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0073b/IHI0073B_arm_neon_intrinsics_ref.pdf)
 
-```
+```c
 #include <arm_neon.h>
 
 void tpd_vsadd(const float* x, const float* y, float* z, int n) {
@@ -172,7 +172,7 @@ void tpd_vsadd(const float* x, const float* y, float* z, int n) {
 
 - PDF 文档: [mkl-2020-developer-reference-c-0.pdf](https://software.intel.com/content/www/us/en/develop/download/developer-reference-for-intel-math-kernel-library-c.html)
 
-```
+```c
 #include <mkl.h>
 
 void tpd_vsadd(const float* x, const float* y, float* z, int n) {
@@ -184,7 +184,7 @@ void tpd_vsadd(const float* x, const float* y, float* z, int n) {
 
 当然相比于看接口文档，我还是比较推荐看Arm Software 官方开源代码  [CMSIS github](https://github.com/ARM-software/CMSIS)，和嵌入式打过交道的小伙伴一定懂。
 
-```
+```c
 #include <arm_math.h>
 
 void tpd_vsadd(const float32_t* x, const float32_t* y, float32_t* z, int n) {
