@@ -1,1 +1,25 @@
-theme: jekyll-theme-minimal
+# Site settings
+title: 茶多酚老爹
+description: >
+  我是一名从事语音识别算法的软件工程师。喜欢研究语音识别、信号处理、声纹识别等语音相关的技术。致力于将前沿的语音识别算法在应用实际工程中的落地。在算法研究基础上，我也不断积累工程方面的经验，以达到两者之间较高的平衡。
+  我也是一名极简主义者，但绝非极端意义上的苦行僧，在物质依赖的社会，我只求将有限的精力放到更重要的事情上，给生活留出喘息的机会，用极简的生活方式给自己减压。
+
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://teapoly.github.io" # the base hostname & protocol for your site
+
+author:
+  fullname: Lekai Huang
+  github: teapoly
+
+# google_analytics: 'UA-XXXXXXXX-X'
+
+# Syntax highlighting
+highlightstyle: ''
+styles: [agate, androidstudio, arta, asceti, atelier-cave.dark, atelier-cave.light, atelier-dune.dark, atelier-dune.light, atelier-estuary.dark, atelier-estuary.light, atelier-forest.dark, atelier-forest.light, atelier-heath.dark, atelier-heath.light, atelier-lakeside.dark, atelier-lakeside.light, atelier-plateau.dark, atelier-plateau.light, atelier-savanna.dark, atelier-savanna.light, atelier-seaside.dark, atelier-seaside.light, atelier-sulphurpool.dark, atelier-sulphurpool.light, brown_paper, codepen-embed, color-brewer, dark, darkula, default, docco, far, foundation, github, github-gist, googlecode, grayscale, hopscotch, hybrid, idea, ir_black, kimbie.dark, kimbie.light, magula, mono-blue, monokai, monokai_sublime, obsidian, paraiso.dark, paraiso.light, pojoaque, railscast, rainbow, school_book, solarized_dark, solarized_light, styles_list.txt, sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright, tomorrow-night, tomorrow-night-eightie, v, xcode, zenburn]
+
+# Handling Reading
+exclude: ["README.md", "README.html"]
+
+# Build settings
+highlighter: null
+markdown: kramdown
