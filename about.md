@@ -1,17 +1,11 @@
 ---
 layout: page
 title: About
-subtitle: SOFTWARE ENGINEER & MINIMALSM
+subtitle: 儿子小名茶多酚故取名「茶多酚老爹」
 permalink: /about/
 ---
 
-因为儿子的小名叫「茶多酚」，所以取了这样一个名字。
-
-# SOFTWARE ENGINEER
-
 我是一名从事语音相关算法的软件工程师。致力于将前沿的语音识别算法应用于实际工程。在算法研究基础上，我也在不断的积累工程方面的经验，以达到两者之间的平衡。主要的研究方向包括语音识别、信号处理、声纹识别三个方向。
-
-# MINIMALSM
 
 同时，我也是一名[极简主义者](https://mnmlist.com/minimalist-faqs/) ，但绝非极端意义上的苦行僧。在物质依赖的社会，我只求将有限的精力放到更重要的事情上，用极简主义的方式给生活留出喘息的时间。
 
