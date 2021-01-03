@@ -1,0 +1,148 @@
+---
+layout: post
+title:  "Transducer Model 改进流式语音识别"
+subtitle: "在线语音识别改进方法"
+date:   2021-01-02 15:00:45
+categories: [research]
+---
+
+这篇文章主要调研的是另外一种改进在线语音识别的方法：基于 RNN Transducer 方法。当然最近强势的基于 Chunk-aware/ local window 的 Conformer + Transducer/Seq2Seq 在线方法，也是我比较感兴趣的方向，离线的Transformer 我基于滴滴的 Athena 框架（TensorFlow 2.2）添加了 Conformer 的支持 [Conformer-Athena](https://github.com/TeaPoly/Conformer-Athena)，后续给予 local window 的在线 Conformer 我会更进。
+
+这篇文章可能文字讲解的地方会比较少，因为图片的内容信息量已经很大了，同时论文的出处我会一并放出，有兴趣的朋友可以阅读下原文。因为我本人是基于 TensorFlow 进行实验的，所以文末会给出有助于我们搭建基于 TensorFlow 的 RNN-T 训练框架的 Repo。
+
+## 实时系统的训练准则对⽐
+
+### Frame-Level Criterion
+
+Cross Entropy:
+
+![img](https://pic1.zhimg.com/v2-42165361f7a74b43a208d58f040951ac_b.jpeg)
+
+CE Loss 公式
+
+### Sequence-Level Criteria
+
+- Maximum Mutual Information：
+
+![img](https://pic3.zhimg.com/v2-f01e5974846431a3726824f626bd8022_b.jpeg)
+
+MMI Loss 公式
+
+该 loss 出了对带浅层语言声学模型做基于词序列的标准解优化之外，还对竞争路径做了区分优化。
+
+Ref：[Sequence-discriminative training of deep neural networks](http://isl.anthropomatik.kit.edu/cmu-kit/downloads/Sequence-discriminative_training_of_deep_neural_networks.pdf)
+
+- Minimum Phone Error or state-level Minimum Bayes Risk：
+
+![img](https://pic3.zhimg.com/v2-12c88b452cf2024fbaaa90842db1440a_b.jpeg)
+
+sMBR Loss 公式
+
+基于MMI的进一步优化是，对标准路径做了相似路径优化扩充，引入了序列相似度打分，旨在缩小类内距离同时放大类外距离。
+
+Ref：[Sequence-discriminative training of deep neural networks](http://isl.anthropomatik.kit.edu/cmu-kit/downloads/Sequence-discriminative_training_of_deep_neural_networks.pdf)
+
+### End-to-End Criteria
+
+- Connectionist Temporal Classification：
+
+![img](https://pic3.zhimg.com/v2-7570163b539d762abce627e62abe391e_b.png)
+
+CTC Loss 公式
+
+相信会有部分人认为 CTC 方法端到端框架下有点牵强，我觉得这很大可能是因为后期出了 RNN-T、Seq2Seq、Encoder-Decoder 框架。可在 CTC 方法刚提出的时候大家普遍都认为这就是一种端到端的方法，该方法极大的简化了此前基于 GMM-HMM alignment 的数据准备流程，英文可以基于 BPE 等方法直接制作 word-piece 就可以训练，中文，建立发音映射表或者基于常用字替换表就可以直接训练。当然后期还是会依赖发音词典和语言模型。
+
+- RNN-T:
+
+![img](https://pic1.zhimg.com/v2-3f43ea97a2f905db00833833dd5ed8c8_b.jpeg)
+
+RNN-T Loss 公式
+
+RNN-T 是基于 CTC 的一个改进，详细内容可以参考两篇经典文章[Sequence Transduction with Recurrent Neural Networks](https://arxiv.org/abs/1211.3711)  和 [Sequence to Sequence Learning with Neural Networks](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf)。具体优化如CTC、Prediction初始化，LayerNorm和学习率等会在后面论文实验部分来分享。似乎 RNN-T 在数据规模不是特别大（7～8万小时）的情况下，还是很需要工匠精神的。
+
+## 论⽂中的实验对⽐
+
+### Model Units
+
+以下是来自京东的一组训练框架的 setup
+
+![img](https://pic3.zhimg.com/v2-2f41a02b7fc786443c6282bd87b8ccd6_b.png)
+
+京东的实验准备
+
+中文识别单元的实验对比如下：
+
+![img](https://pic1.zhimg.com/v2-8e01ab9a40e33e790495c9b3b4bbba1c_b.png)
+
+不同识别单元对 Transducer 的影响
+
+京东的实验结果关于中文字的实验结果似乎和阿里 [Zhang Shiliang](https://github.com/tramphero) 论文中的 [Investigation of Modeling Units for Mandarin Speech Recognition Using Dfsmn-ctc-smbr](https://ieeexplore.ieee.org/document/8683859) 结果有些出入。我的理解是两个框架下中文字的建模有比较大的区别，一个基于7228字作为完整映射，一个基于2000/3000/4000中文字加拼音（或常用字替换）后期还是要基于发音词典（或常用字映射）来解码。后者对于语言层面的解码有很大的优化空间。
+
+Ref: [Research on Modeling Units of Transformer Transducer for Mandarin Speech Recognition](https://arxiv.org/pdf/2004.13522.pdf)
+
+### Diﬀerent Criterion
+
+Datsebase is 1000 hours Sogou dataset. model units is Chinese character:
+
+-  26 English characters  
+-  6784 frequently-used Chinese characters an unknown token (UNK)  
+-  a blank token  
+
+![img](https://pic1.zhimg.com/v2-ee0541ea4d5ce4762b53f38a7da0b978_b.png)
+
+1000小时下不同的 RNN-T 优化方法对于识别率的影响
+
+Ref: [Exploring RNN-Transducer for Chinese Speech Recognition](https://arxiv.org/abs/1811.05097)
+
+### Dataset
+
+![img](https://pic2.zhimg.com/v2-0ef7d49a55db675a9ea92da1960ce091_b.png)
+
+不同数据量对于 RNN-T 的影响
+
+Ref: [Exploring RNN-Transducer for Chinese Speech Recognition](https://arxiv.org/abs/1811.05097)
+
+### Quality Improvements
+
+![img](https://pic3.zhimg.com/v2-0d8db59aab1a9983c375ee1fb51d2426_b.jpeg)
+
+RNN-T 初始化的影响
+
+Configure:
+
+-  8-layer encoder, 2048 unidirectional LSTM cells + 640 projection units.  
+-  2-layer prediction network, 2048 unidirectional LSTM cells + 640 projection units.  
+-  Model output units: grapheme or word-piece.  
+-  Total system size: ~120MB after quantization (more on this in a later slide).  
+
+![img](https://pic4.zhimg.com/v2-30860266c17f69455e64a4e61bbd13f7_b.jpeg)
+
+RNN-T 的几个优化方法对于识别的影响以及 CTC 的对比
+
+Ref: [Towards End-to-End Speech Recognition - ISCSLP 2018](http://iscslp2018.org/images/T4_Towards end-to-end speech recognition.pdf) 
+
+## 开源项⽬
+
+### -  [warp-transducer](https://github.com/HawkAaron/warp-transducer)
+
+ 参考 [warp-ctc](https://github.com/baidu-research/warp-ctc) 实现的 GPU/CPU 版本的 RNN-T Loss，目前支持 PyTorch/Tensorflow binding。我目前也是用这个项目做 RNN-T 的实验，结果符合预期。
+
+在加入 CTC 和 prediction 初始化之后提升非常可观，以下是 CTC/Transducer greedy searching 的结果：
+
+| Model | Init                | TER        |
+| ----- | ------------------- | ---------- |
+| CTC   | Ramdom              | 15.11%     |
+| RNN-T | Ramdom              | 13.16%     |
+| RNN-T | CTC+Prediction Init | **11.85%** |
+
+### -  [rnnt-speech-recognition](https://github.com/noahchalifour/rnnt-speech-recognition)
+
+[Noah Chalifour](https://github.com/noahchalifour) 大学生开发，一套基于 TensorFlow 2.0 的 RNN-T 训练框架，几乎从数据制作到训练、测试都是采用 TensorFlow，目前原作者似乎都没完整跑完一个 CommonVoice 训练。我目前跑了几个迭代，非常慢并且伴随 crash 的问题，猜测是因为训练过程中实时 Greedy Search 测试的缘故，所有只能从头完成了 RNN-T 的训练，后续考虑开源出来。说回来，[rnnt-speech-recognition](https://github.com/noahchalifour/rnnt-speech-recognition) 这部分代码的条理很清晰，同时风格也比较精练，整套代码很值得参考。
+
+### -  [TensorflowASR](https://github.com/Z-yq/TensorflowASR)
+
+涵盖 CTC/Transducer/LAS/MultiTaskCTC 的一套训练框架，基于 TensorFlow。声学模型和语言模型都支持 Transformer/Conformer，aishell2 上 CER（WER） 已经做到了 4.4%。
+
+###  - [StreamingTransformer](https://github.com/cywang97/StreamingTransformer) 
+
+微软亚洲研究院基于 ESPnet ( PyTorch backend) 修改而来的一套基于在线 Transformer 的  pipeline，包含 Chunk 和 lookahead 在线的方式，[On the Comparison of Popular End-to-End Models for Large Scale Speech Recognition](https://arxiv.org/abs/2005.14327)，基于 Librispeech 实验结果来看 chunk 的方式效果还是要更好，延迟和识别率都挺可观的。
