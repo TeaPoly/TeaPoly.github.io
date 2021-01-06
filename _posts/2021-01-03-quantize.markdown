@@ -34,21 +34,40 @@ DNN 拓扑结构
 
 量化方法是一种类似于离差标准化的归一化方法，是对原始数据进行线性变换，使结果映射到一定范围内，具体公式如下：
 
-```python
-V_quant = Q * (V_x - V_min)
-V_quant_revert = V_quant / Q + V_min
+$$
+V_q = Q * (V_x - min(V_x))
+$$
 
-Q = S / R
-R = V_max - V_min
-S = 1 << quant_bits - 1
-```
+$$
+V_x' = V_q / Q + min(V_x)
+$$
 
-其中，V_x表示原始浮点输入，V_quant表示量化后的定点数值，V_quant_revert是根据量化参数还原出的浮点数，quant_bits表示量化位数（1~32）。假设 RQM = round(Q * V_min)，那么上述公式可以进一步简化为：
+$$
+Q=S/R
+$$
 
-```python
-V_quant = round(Q * V_x) - RQM
-V_quant_revert = (V_quant + RQM) / Q
-```
+$$
+R=max(V_x)-min(V_x)
+$$
+
+$$
+S = 1 << bits - 1
+$$
+
+其中， $V_x $  表示原始浮点输入，$V_q$ 表示量化后的定点数值，$V_q'$ 是根据量化参数还原出的浮点数，$bits$表示量化位数（1~32）。上述公式可以进一步简化为：
+
+$$
+V_q = round(Q * V_x) - RQM
+$$
+
+$$
+V_x' = (V_q + RQM) / Q
+$$
+
+$$
+RQM = round(Q*min(V_x))
+$$
+
 
 代码实现如下：
 
