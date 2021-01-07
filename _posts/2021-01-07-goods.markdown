@@ -2,7 +2,7 @@
 layout: post
 title:  "2020 年带来幸福感的好物"
 subtitle: "相见恨晚的好东西"
-date:   2021-01-02 14:00:45
+date:   2021-01-07 23:00:45
 categories: [research]
 ---
 
@@ -52,7 +52,7 @@ categories: [research]
 
 ## 家庭
 
-![home](/Users/huanglk/Desktop/home.jpg)
+![edc](https://i.imgur.com/n0ICjXZ.jpg)
 
 接下来到家庭设备的部分了，可以一个一个讲了。
 
