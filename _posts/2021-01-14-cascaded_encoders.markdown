@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "级联编码器 (Cascaded Encoders) 流式离线混合模型"
+title:  "级联编码器 (Cascaded Encoders) 在流+离线混合 ASR 模型"
 subtitle: "流式+离线语音识别"
 date:   2021-01-14 15:00:45
 categories: [research]
@@ -12,13 +12,14 @@ categories: [research]
 
 ![截屏2021-01-14 上午11.55.04](https://tva1.sinaimg.cn/large/008eGmZEgy1gmn33x8p35j30w00rqdjo.jpg)
 
-在 Casual 编码的基础上加入了一个 non-causal 的编码，可以理解为在线+离线混合模型。在线实时显示实时编码结果的同时，还帮助离线模型分摊了一大部分计算量。
+在 Casual 编码器的基础上加入了一个 Non-Causal 的离线编码器，可以理解为在线+离线混合模型。可以边显示实时编码结果，还可以在句尾做二次矫正显示更优的整句结果。另外，级联的方式还可以帮助离线模型分摊一大部分计算量。
 
-最终的 loss 计算可以引入一个权重系数：$L=λL_s +(1−λ)L_a$。当然 Google 也给出了他们认为最好的方式，那就是在模型训练过程中，采用了随机选择路径的方式来进行前馈计算和梯度的求解。
+最终的 loss 计算可以引入一个权重系数：$L=λL_s +(1−λ)L_a$。Google 也给出了他们实际中采用的方式，那就是在模型训练过程中，采用随机选择路径的方式来进行前馈计算和梯度的求解。
+
 
 > In practice, we found that we can decrease the step-time during training by sampling from es and ea within a mini-batch using λ as the sampling rate. Therefore, for each input utterance, we stochastically choose either the causal or the non-causal processing path at each training step. This alleviates the need to compute RNN-T loss twice for each training example at each training step. With sampling, the model converges roughly after the same number of steps as a standalone streaming model.
 
-这样可以减少训练中每次需要计算两次 Loss，在每条路径下累加相同总步数的情况下，收敛程度应该和分别计算是差不多的。为此，我也写了一段伪代码。
+这样可以减少训练中每次需要计算两次 Loss 的问题，在每条路径下累加相同总步数的情况下，收敛程度应该和分别计算是差不多的。为此，我也写了一段伪代码。
 
 ``` python
 class CascadedCtcMultiLayer:
@@ -121,7 +122,7 @@ class CascadedCtcMultiLayer:
 
 和原文采用 RNN-T loss 不同的是，我目前只使用了 CTC Loss 的实验正在进行中。其中 Logit 部分也共享了参数。
 
-论文中采用级联结构后的结果如下：
+原论文中采用级联结构后的结果如下：
 
 ![截屏2021-01-14 下午12.09.45](https://tva1.sinaimg.cn/large/008eGmZEgy1gmn3iwlblhj30v8084wfh.jpg)
 
