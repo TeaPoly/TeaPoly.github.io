@@ -22,110 +22,104 @@ categories: [research]
 
 ``` python
 class CascadedCtcMultiLayer:
-    """ 
-    CASCADED ENCODERS FOR UNIFYING STREAMING AND NON-STREAMING ASR
-
-    Ref: https://arxiv.org/abs/2010.14606
-
-    Architecture:
-
-        Inputs 
-          |
-          |             
-    Causal Encoder-------Non-Causal Encoder
-          |                     |
-          |_____________________|
-          |
-        Logits
-          |
-       CTC Loss
-
-    """
-
-    def __init__(self, is_train_condition, proto_path, vocal_size,
-                 trainable=True,
-                 quantize_num_bits=0, only_quantize_weight=False,
-                 var_device='gpu', weight_item=0.5):
-
-        super().__init__(is_train_condition, proto_path)
-
-        self.weight_item = tf.cast(weight_item, dtype=tf.float32)
-
-        if isinstance(self.proto, str):
-            self.proto = ProtoParserCascadedCtc(self.proto)
-
-        # EncoderNetwork
-        self.encoder = TransformerNetwork.CtcEncoderNetwork(
-            self.proto, is_train_condition, trainable, quantize_num_bits, only_quantize_weight,
-            var_device=var_device)
-
-        # LogitNetwork
-        self.logit = TransformerNetwork.CtcLogitNetwork(
-            self.proto, is_train_condition, trainable, vocal_size, quantize_num_bits, only_quantize_weight,
-            var_device=var_device)
-
-        # CascadedEncoders
-        self.cascaded_encoder = TransformerNetwork.CascadedCtcEncoderNetwork(
-            self.proto, is_train_condition, trainable, quantize_num_bits, only_quantize_weight,
-            var_device=var_device)
-
-    def __call__(self, inputs, sequence_lengths):
-        '''
-        @return:
-            logit: Logit with causal network.
-            cascaded_logit: Logit with non-causal network.
-            sequence_lengths: sequence lengths.
-        '''
-        acoustic_features, sequence_lengths = self.encoder(
-            inputs, sequence_lengths)
-
-        logit, cascaded_logit = tf.cond(
-            self.is_train_condition,
-            lambda: self.training(acoustic_features, sequence_lengths),
-            lambda: self.testing(acoustic_features, sequence_lengths)
-        )
-
-        return logit, cascaded_logit, sequence_lengths
-
-    def training(self, acoustic_features, sequence_lengths):
-        '''
-        For each input utterance, we stochastically choose either the causal or 
-        the non-causal processing path at each training step. 
-        This alleviates the need to compute RNN-T loss twice for each training 
-        example at each training step. With sampling, the model converges roughly 
-        after the same number of steps as a standalone streaming model.
-        '''
-        random_val = tf.random.uniform(
-            shape=(), minval=0., maxval=1., dtype=tf.float32)
-
-        def causal():
-            return self.logit(acoustic_features)
-
-        def nocausal():
-            cascaded_acoustic_features, _ = self.cascaded_encoder(
-                acoustic_features, sequence_lengths)
-            return self.logit(cascaded_acoustic_features)
-
-        logit = tf.cond(
-            tf.math.less_equal(random_val, self.weight_item),
-            causal,
-            nocausal
-        )
-
-        return logit, logit
-
-    def testing(self, acoustic_features, sequence_lengths):
-        logit = self.logit(acoustic_features)
-
-        cascaded_acoustic_features, _ = self.cascaded_encoder(
-            acoustic_features, sequence_lengths)
-
-        cascaded_logit = self.logit(cascaded_acoustic_features)
-
-        return logit, cascaded_logit
+   """ 
+  CASCADED ENCODERS FOR UNIFYING STREAMING AND NON-STREAMING ASR
+​
+  Ref: https://arxiv.org/abs/2010.14606
+​
+  Architecture:
+​
+      Inputs 
+        |
+        |             
+  Causal Encoder-------Non-Causal Encoder
+        |                     |
+        |_____________________|
+        |
+      Logits
+        |
+      CTC Loss
+​
+  """
+​
+   def __init__(self, is_train_condition, proto_path, vocal_size,
+                trainable=True, weight_item=0.5):
+​
+       self.is_train_condition = is_train_condition
+​
+       self.weight_item = tf.cast(weight_item, dtype=tf.float32)
+​
+       self.proto = ProtoParserCascadedCtc(proto_path)
+​
+       # EncoderNetwork
+       self.encoder = TransformerNetwork.CtcEncoderNetwork(
+           self.proto, is_train_condition, trainable)
+​
+       # LogitNetwork
+       self.logit = TransformerNetwork.CtcLogitNetwork(
+           self.proto, is_train_condition, trainable, vocal_size)
+​
+       # CascadedEncoders
+       self.cascaded_encoder = TransformerNetwork.CascadedCtcEncoderNetwork(
+           self.proto, is_train_condition, trainable)
+​
+   def __call__(self, inputs, sequence_lengths):
+       '''
+      @return:
+          logit: Logit with causal network.
+          cascaded_logit: Logit with non-causal network.
+          sequence_lengths: sequence lengths.
+      '''
+       acoustic_features, sequence_lengths = self.encoder(
+           inputs, sequence_lengths)
+​
+       logit, cascaded_logit = tf.cond(
+           self.is_train_condition,
+           lambda: self.training(acoustic_features, sequence_lengths),
+           lambda: self.testing(acoustic_features, sequence_lengths)
+      )
+​
+       return logit, cascaded_logit, sequence_lengths
+​
+   def training(self, acoustic_features, sequence_lengths):
+       '''
+      For each input utterance, we stochastically choose either the causal or 
+      the non-causal processing path at each training step. 
+      This alleviates the need to compute RNN-T loss twice for each training 
+      example at each training step. With sampling, the model converges roughly 
+      after the same number of steps as a standalone streaming model.
+      '''
+       random_val = tf.random.uniform(
+           shape=(), minval=0., maxval=1., dtype=tf.float32)
+​
+       def causal():
+           return self.logit(acoustic_features)
+​
+       def nocausal():
+           cascaded_acoustic_features, _ = self.cascaded_encoder(
+               acoustic_features, sequence_lengths)
+           return self.logit(cascaded_acoustic_features)
+​
+       logit = tf.cond(
+           tf.math.less_equal(random_val, self.weight_item),
+           causal,
+           nocausal
+      )
+​
+       return logit, logit
+​
+   def testing(self, acoustic_features, sequence_lengths):
+       logit = self.logit(acoustic_features)
+​
+       cascaded_acoustic_features, _ = self.cascaded_encoder(
+           acoustic_features, sequence_lengths)
+​
+       cascaded_logit = self.logit(cascaded_acoustic_features)
+​
+       return logit, cascaded_logit
 ```
 
-和原文采用 RNN-T loss 不同的是，我目前只使用了 CTC Loss 在进行实验。其中 Logit 部分也共享了参数。
+和原文采用 RNN-T loss 不同的是，我目前只使用了 CTC Loss 的实验正在进行中。其中 Logit 部分也共享了参数。
 
 论文中采用级联结构后的结果如下：
 
