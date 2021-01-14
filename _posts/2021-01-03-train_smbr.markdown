@@ -3,7 +3,7 @@ layout: post
 title:  "序列区分训练改进流式语音识别"
 subtitle: "在线语音识别改进方法"
 date:   2021-01-02 14:00:45
-categories: [research]
+categories: [tech]
 ---
 
 这篇文章主要调研的是一种常见的改进在线语音识别的方法：序列区分性训练（[Sequence Discriminative Training](https://www.inf.ed.ac.uk/teaching/courses/asr/2017-18/asr12-seq.pdf)）。相信有很多人已经在 CTC/CE 的训练上遇到了瓶颈，而一些新的框架如 RNN-T，End2End 的实现，对于工程上的改动比较大。这个时候考虑序列区分性训练是一个非常实惠的方式，基于 CE/CTC 稳定下来的模型，接入序列区分性训练，收益非常可观且工程代码不用修改，只需要后期 tune 一下参数就好。文末会给出我最近看到的一些有助于实现该功能的 Repo。
@@ -62,7 +62,7 @@ Ref：[Sequence-discriminative training of deep neural networks](http://isl.anth
 
 谷歌的 sMBR 训练流程
 
-Ref： [Sequence Discriminative Distributed Training of Long Short-Term Memory Recurrent Neural Networks](https://research.google/pubs/pub42547/)
+Ref： [Sequence Discriminative Distributed Training of Long Short-Term Memory Recurrent Neural Networks](https://tech.google/pubs/pub42547/)
 
 ## 论⽂中的实验对⽐
 
@@ -90,7 +90,7 @@ Ref: [Investigation of Modeling Units for Mandarin Speech Recognition Using Dfsm
 
 不同的 N-GRAM 模型对于 sMBR 训练的影响
 
-Ref: [Sequence Discriminative Distributed Training of Long Short-Term Memory Recurrent Neural Networks](https://research.google/pubs/pub42547/)
+Ref: [Sequence Discriminative Distributed Training of Long Short-Term Memory Recurrent Neural Networks](https://tech.google/pubs/pub42547/)
 
 ### Training Strategy
 
@@ -98,7 +98,7 @@ Ref: [Sequence Discriminative Distributed Training of Long Short-Term Memory Rec
 
 不同的 CE 预训练阶段切换对于 MMI/sMBR 的影响
 
-Ref: [Sequence Discriminative Distributed Training of Long Short-Term Memory Recurrent Neural Networks](https://research.google/pubs/pub42547/)
+Ref: [Sequence Discriminative Distributed Training of Long Short-Term Memory Recurrent Neural Networks](https://tech.google/pubs/pub42547/)
 
 ### Noisy Dataset
 
@@ -106,7 +106,7 @@ Ref: [Sequence Discriminative Distributed Training of Long Short-Term Memory Rec
 
 CE-sMBR 和 CTC-sMBR 在不同数据类型下的对比
 
-Ref: [FLAT START TRAINING OF CD-CTC-SMBR LSTM RNN ACOUSTIC MODELS](https://research.google.com/pubs/archive/44269.pdf)
+Ref: [FLAT START TRAINING OF CD-CTC-SMBR LSTM RNN ACOUSTIC MODELS](https://tech.google.com/pubs/archive/44269.pdf)
 
 ## 开源项⽬
 

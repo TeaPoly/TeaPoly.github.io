@@ -3,7 +3,7 @@ layout: post
 title:  "Transducer Model 改进流式语音识别"
 subtitle: "在线语音识别改进方法"
 date:   2021-01-02 15:00:45
-categories: [research]
+categories: [tech]
 ---
 
 这篇文章主要调研的是另外一种改进在线语音识别的方法：基于 RNN Transducer 方法。当然最近强势的基于 Chunk-aware/ local window 的 Conformer + Transducer/Seq2Seq 在线方法，也是我比较感兴趣的方向，离线的Transformer 我基于滴滴的 Athena 框架（TensorFlow 2.2）添加了 Conformer 的支持 [Conformer-Athena](https://github.com/TeaPoly/Conformer-Athena)，后续给予 local window 的在线 Conformer 我会更进。
@@ -125,7 +125,7 @@ Ref: [Towards End-to-End Speech Recognition - ISCSLP 2018](http://iscslp2018.org
 
 ### -  [warp-transducer](https://github.com/HawkAaron/warp-transducer)
 
- 参考 [warp-ctc](https://github.com/baidu-research/warp-ctc) 实现的 GPU/CPU 版本的 RNN-T Loss，目前支持 PyTorch/Tensorflow binding。我目前也是用这个项目做 RNN-T 的实验，结果符合预期。
+ 参考 [warp-ctc](https://github.com/baidu-tech/warp-ctc) 实现的 GPU/CPU 版本的 RNN-T Loss，目前支持 PyTorch/Tensorflow binding。我目前也是用这个项目做 RNN-T 的实验，结果符合预期。
 
 在加入 CTC 和 prediction 初始化之后提升非常可观，以下是 CTC/Transducer greedy searching 的结果：
 

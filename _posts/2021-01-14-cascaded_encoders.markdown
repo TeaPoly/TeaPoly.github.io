@@ -2,8 +2,8 @@
 layout: post
 title:  "级联编码器 (Cascaded Encoders) 在流+离线混合 ASR 模型"
 subtitle: "流式+离线语音识别"
-date:   2021-01-14 15:00:45
-categories: [research]
+date:   2021-01-14 08:00:45
+categories: [tech]
 ---
 
 受到 Google 一篇  [CASCADED ENCODERS FOR UNIFYING STREAMING AND NON-STREAMING ASR](https://arxiv.org/abs/2010.14606) 论文的启发，准备采用级联编码来改善 Second Pass 的识别效果。
