@@ -32,7 +32,7 @@ blockquote {
     margin-top: 40px;
     margin-bottom: 70px;
     padding: 0px;
-    text-align: center;
+    text-align: left;
     position: relative;
 
     footer {
@@ -50,11 +50,11 @@ blockquote {
 
     p {
         display: inline;
-        font-size: 20px;
+        font-size: 18px;
         color: $cloudy;
         font-weight: 400;
-        &:before { content: "“ "; }
-        &:after { content: " ”"; }
+        &:before { font-size: 40px; content: "“"; }
+        &:after {  }
     }
 }
 
