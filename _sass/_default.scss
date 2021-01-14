@@ -27,12 +27,13 @@ img {
 }
 
 blockquote {
+    font-family: 'Georgia', ;
     letter-spacing: 3px;
     margin:0px;
     margin-top: 40px;
     margin-bottom: 70px;
     padding: 0px;
-    text-align: left;
+    text-align: justify;
     position: relative;
 
     footer {
@@ -53,7 +54,7 @@ blockquote {
         font-size: 18px;
         color: $cloudy;
         font-weight: 400;
-        &:before { font-size: 40px; content: "“"; }
+        &:before { font-size: 58px; content: "“"; }
         &:after {  }
     }
 }
