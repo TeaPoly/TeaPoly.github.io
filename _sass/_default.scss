@@ -26,6 +26,48 @@ img {
     max-width: 100%;
 }
 
+// Spacing unit
+$spacer: 8px !default;
+
+// Spacing scale
+$spacer-1: $spacer !default; // 8px
+$spacer-2: ($spacer * 2) !default; // 16px
+$spacer-3: ($spacer * 4) !default; // 32px
+$spacer-4: ($spacer * 8) !default; // 64px
+$color-body-text: $cloudy;
+
+table {
+    border-collapse: collapse;
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5em;
+    overflow: auto;
+    // For Firefox to horizontally scroll wider tables.
+    word-break: normal;
+    word-break: keep-all;
+
+    th {
+      font-weight: bold;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: $spacer-2 $spacer-3 $spacer-2 2px;
+      border-top: 1px solid $color-body-text;
+      border-bottom: 1px solid $color-body-text;
+    }
+
+    tr {
+      border-top: 1px solid $color-body-text;
+    }
+
+    tr th {
+      border-top: 2px solid $color-body-text;
+      border-bottom: 2px solid $color-body-text;
+    }
+  }
+
 blockquote {
     font-family: 'Georgia', ;
     letter-spacing: 0px;
