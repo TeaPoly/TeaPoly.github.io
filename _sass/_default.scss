@@ -68,25 +68,34 @@ table {
     }
   }
 
-blockquote {
-  font-family: 'Georgia', ;
+
+blockquote{
+  display:block;
+  padding: 15px 20px 15px 45px;
+  margin: 0 0 20px;
+  position: relative;
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $cloudy;
   text-align: justify;
-  // border-left: 10px solid $cloudy;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
 }
-blockquote:before {
+
+blockquote::before{
+  content: "\201C"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
   color: $cloudy;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
-  color: $cloudy;
+  
+  /*Positioning*/
+  position: absolute;
+  left: 10px;
+  top:5px;
 }
 
 strong {
