@@ -192,7 +192,7 @@ Apple  [Hybrid Transformer/CTC Networks for Hardware Efficient Voice Triggering]
 
 ![截屏2021-01-16 下午1.45.14](https://tva1.sinaimg.cn/large/008eGmZEgy1gmphj2ltpnj30oe0l63zy.jpg)
 
-将最终的识别结果拉回到几乎是离线 Confomer 的效果，这种 Second Pass 的做法有很多种，但是在训练流程上如此简洁的框架应该不是很多。
+将最终的识别结果拉回到接近离线 Confomer 的效果，从 dynamic chunk 到 CTC+AED，出门问问看来是准备打造一个超级简洁的框架。
 
 ## 实验结果
 
