@@ -147,6 +147,8 @@ def subsequent_chunk_mask(size, chunk_size):
 
 关于通过动态的控制 chunk 分别的比例，文中纯离线方式在每个 Epoch 中占据 50%的比例，剩下1-25 （40ms-1s）的chunk 在剩余的 50% 是等比例分布的。具体公式如下：
 
+![截屏2021-01-16 下午6.03.37](https://tva1.sinaimg.cn/large/008eGmZEgy1gmpozoxy1dj30nc03aq39.jpg)
+
 PyTorch 的[代码实现](https://github.com/mobvoi/wenet/blob/ee43964afd8fe1c984f030124075b9d1e463b444/wenet/utils/mask.py#L63)如下：
 
 ```python
@@ -212,5 +214,5 @@ Conformer (causal convolution)
 | ctc prefix beam search   | 5.49 | 6.08 | 6.41 | 6.64 | 7.58 |
 | attention rescoring      | 4.90 | 5.33 | 5.52 | 5.71 | 6.23 |
 
-CTC + Attention Rescoring 的在不同时延下的表现可以说是非常稳定，真是一份漂亮的实验结果。
+CTC + Attention Rescoring 的在不同时延下的表现可以说是非常稳定。
 
