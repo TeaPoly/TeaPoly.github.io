@@ -8,7 +8,7 @@ categories: [tech]
 
 这次要分享的是[出门问问](https://www.chumenwenwen.com)最近分享的一篇 Paper [Unified Streaming and Non-streaming Two-pass End-to-end Model for Speech Recognition](http://arxiv.org/abs/2012.05481)， 他们团队还一并奉上了训练代码 [WeNet](https://github.com/mobvoi/WeNet)，是基于 [ESPnet](https://github.com/espnet/espnet) 修改而来，使用过 ESPnet 的朋友，应该是得心应手了。
 
-基于 Chunk 的在线 Transformer 模型我们已经看过很多了，这次出门问问在目前有着 SOTA 加身的 [Conformer](http://arxiv.org/abs/2005.08100) 模型的基础上，引入动态 chunk 的模型，训练一个模型就可以同时支持从 40ms 到 1s 的在线模型，以及纯离线的 Conformer 模型，并且在引入了 CTC Prefix 在线解码 + Decoder Second Pass Resore 的离线处理逻辑后，应对在线离线混合识别的场景时显得底气十足，具体框架如下：
+基于 Chunk 的在线 Transformer 模型我们已经看过很多了，这次出门问问在目前有着 [SOTA](https://en.wikipedia.org/wiki/State_of_the_art) 加身的 [Conformer](http://arxiv.org/abs/2005.08100) 模型的基础上，引入动态 chunk 的模型，训练一个模型就可以同时支持从 40ms 到 1s 的在线模型，以及纯离线的 Conformer 模型，并且在引入了 CTC Prefix 在线解码 + Decoder Second Pass Resore 的离线处理逻辑后，应对在线离线混合识别的场景时显得底气十足，具体框架如下：
 
 ![截屏2021-01-16 下午1.45.14](https://tva1.sinaimg.cn/large/008eGmZEgy1gmphj2ltpnj30oe0l63zy.jpg)
 
@@ -103,7 +103,7 @@ def subsequent_chunk_mask(size, chunk_size):
 
 ### 卷积模块（Conv Module）
 
-第二部分是由于 Conformer 在 Transformer 的全局视野的基础上再引入了局部特征，虽然看上去不是一个极简的设计，但目前就实验而言，目前的 SOTA 无疑。而且我认为这是一个非常有意思的设计（后面会讲到）。
+第二部分是由于 Conformer 在 Transformer 的全局视野的基础上再引入了局部特征，虽然看上去不是一个极简的设计，但目前就实验而 SOTA 无疑。而且我认为这是一个非常有意思的设计（后面会讲到）。
 
 这部分的核心其实是 Depthwise Conv1D 的结构，如果你此前接触过 FSMN 或者 SVDF ，理解起来就很简单了。我的理解是该结构考虑的是当前帧特征和过去、未来有限长的特征关系，通过有限脉冲响应方程（或称逐通道卷积）来完成，ESPnet 中大部分的实验采用的 kernel size 为 15 的大小，即左右分别看 7 帧，当然这部分的延迟是由右看引起的，假设我们有12层 Conformer 模型，前端 Subsamping 为 40 ms 的话，关于 Conv 这部分的总延迟就是  $ 12*7*40 = 3360ms  $ ，即 3.36 秒的延时，目前针对这部分延迟基本上是简单地移除右看部分，变成 Causal Conv Module，[部分代码](https://github.com/mobvoi/wenet/blob/ee43964afd8fe1c984f030124075b9d1e463b444/wenet/transformer/convolution.py#L44) 如下:
 
