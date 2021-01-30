@@ -6,7 +6,8 @@ date:   2021-01-16 06:00:45
 categories: [tech]
 ---
 
-这次要分享的是[出门问问](https://www.chumenwenwen.com)最近分享的一篇 Paper [Unified Streaming and Non-streaming Two-pass End-to-end Model for Speech Recognition](http://arxiv.org/abs/2012.05481)， 他们团队还一并奉上了训练代码 [WeNet](https://github.com/mobvoi/WeNet)，是基于 [ESPnet](https://github.com/espnet/espnet) 修改而来，使用过 ESPnet 的朋友，应该是得心应手了。
+这次要分享的是[出门问问](https://www.chumenwenwen.com)最近分享的一篇 Paper [Unified Streaming and Non-streaming Two-pass End-to-end Model for Speech Recognition](http://arxiv.org/abs/2012.05481)， 他们团队还一并奉上了训练代码 [WeNet](https://github.com/mobvoi/WeNet)，是基于 [ESPnet](https://github.com/espnet/espnet) 修改而来，使用过 ESPnet 的朋友，应该是得心应手了。基于滴滴的 Athena 框架（TensorFlow 2.2) 我添加了 Dynamic chunk-based attention Conformer 的支持 [Conformer-Athena](https://github.com/TeaPoly/Conformer-Athena)。
+
 
 基于 Chunk 的在线 Transformer 模型我们已经看过很多了，这次出门问问在目前有着 [SOTA](https://en.wikipedia.org/wiki/State_of_the_art) 加身的 [Conformer](http://arxiv.org/abs/2005.08100) 模型的基础上，引入动态 chunk 的模型，训练一个模型就可以同时支持从 40ms 到 1s 的在线模型，以及纯离线的 Conformer 模型，并且在引入了 CTC Prefix 在线解码 + Decoder Second Pass Resore 的离线处理逻辑后，应对在线离线混合识别的场景时显得底气十足，具体框架如下：
 
