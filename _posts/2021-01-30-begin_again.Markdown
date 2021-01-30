@@ -14,4 +14,4 @@ categories: [life]
 
 写博客应该也一样，大家放下了职场竞争的紧绷，把自己放在肚子里的东西一一诉说。
 
-![PXL_20210126_114235738.NIGHT](https://img9.doubanio.com/view/photo/l/public/p2561524385.jpg)
+![p2561524385](https://tva1.sinaimg.cn/large/008eGmZEgy1gn5jnuakyxj30qe11d4nr.jpg)
