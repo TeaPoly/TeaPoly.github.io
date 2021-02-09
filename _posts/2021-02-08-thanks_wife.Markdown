@@ -12,6 +12,6 @@ categories: [life]
 
 已是为人父母的我，这个点应该给儿子泡奶，刷牙，哄娃睡觉的时间了，而现在的我可以好好欣赏下我其他「心爱」的东西了。
 
-![IMG_0125](/Users/huanglk/Downloads/IMG_0125.jpg)
+![IMG_0125](https://tva1.sinaimg.cn/large/008eGmZEgy1gnhorixh67j30u00u0b29.jpg)
 
 ![IMG_0130](https://tva1.sinaimg.cn/large/008eGmZEgy1gnho2fotbdj316e0u0x6p.jpg)
