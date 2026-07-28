@@ -351,7 +351,7 @@ strong {
     grid-area: books;
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    min-height: 0;
 }
 
 .hobby-panel--music {
@@ -388,8 +388,8 @@ strong {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 10px;
-    padding: 2px 0 0;
+    gap: 8px;
+    padding: 0;
 }
 
 .item-shelf--row {
@@ -401,8 +401,12 @@ strong {
     display: flex;
     align-items: flex-end;
     gap: 8px;
-    min-height: 86px;
-    padding: 0 4px 6px;
+    min-height: 0;
+    padding: 0 4px 4px;
+}
+
+.item-shelf__row--compact {
+    min-height: 92px;
 }
 
 .item-shelf__row::after {
@@ -422,7 +426,7 @@ strong {
 .item-shelf__item {
     position: relative;
     z-index: 1;
-    width: 62px;
+    width: 58px;
     flex: 0 0 auto;
     display: block;
     transform-origin: bottom center;
@@ -802,6 +806,15 @@ pre code {
     .site-shell {
         padding: 22px 20px 0;
     }
+
+    .hobby-panel--books {
+        min-height: 0;
+    }
+
+    .item-shelf__row--compact {
+        min-height: 0;
+    }
+
 
     .hobby-bento {
         grid-template-columns: 1fr;
