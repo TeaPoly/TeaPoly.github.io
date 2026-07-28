@@ -293,8 +293,8 @@ strong {
 
 .post-teaser a {
     display: grid;
-    grid-template-columns: 72px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: minmax(0, 1fr) 88px;
+    gap: 12px;
     align-items: center;
     padding: 10px 12px;
     border: 1px solid var(--line);
