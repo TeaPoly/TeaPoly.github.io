@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Vans">
+  <rect width="400" height="500" fill="#f7f7f7"/>
+  <rect x="48" y="48" width="304" height="304" fill="#111111"/>
+  <path d="M92 248h48l18-48 18 48h48l-38 28 14 48-42-30-42 30 14-48-38-28zm140 0h96v28h-66v20h58v28h-58v48h-30V248z" fill="#ffffff"/>
+  <text x="200" y="404" text-anchor="middle" fill="#111111" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="6">VANS</text>
+  <text x="200" y="438" text-anchor="middle" fill="#888888" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" letter-spacing="3">SKATE</text>
+</svg>

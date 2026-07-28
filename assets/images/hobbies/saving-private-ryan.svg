@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Saving Private Ryan">
+  <rect width="400" height="600" fill="#3d4a3a"/>
+  <path d="M0 260 L400 200 L400 340 L0 400 Z" fill="#6b7a5e"/>
+  <path d="M40 180h40v40H40zm80 20h40v40h-40zm80-10h40v40h-40zm80 30h40v40h-40z" fill="#c5d0b8" opacity="0.35"/>
+  <text x="30" y="430" fill="#f4f1e8" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Saving Private</text>
+  <text x="30" y="470" fill="#f4f1e8" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Ryan</text>
+  <text x="30" y="540" fill="#b7c2a8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2">1998</text>
+</svg>

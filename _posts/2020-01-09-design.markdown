@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "设计海报感谢十年相伴的三件好物"
+title:  "Three Design Objects Worth a Decade of Company"
 subtitle: "利用 Keynote 帮陪伴我多年的物品设计海报"
 date:   2020-01-09 12:00:45
 categories: [life]

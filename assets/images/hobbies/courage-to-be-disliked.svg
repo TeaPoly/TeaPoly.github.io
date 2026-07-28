@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="The Courage to Be Disliked">
+  <rect width="400" height="600" fill="#f4f0e8"/>
+  <rect x="0" y="0" width="18" height="600" fill="#c9b79a"/>
+  <text x="40" y="160" fill="#1c1a16" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">The Courage</text>
+  <text x="40" y="208" fill="#1c1a16" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">to Be</text>
+  <text x="40" y="256" fill="#1c1a16" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Disliked</text>
+  <line x1="40" y1="300" x2="180" y2="300" stroke="#8b7355" stroke-width="2"/>
+  <text x="40" y="360" fill="#6f6454" font-family="Georgia, 'Times New Roman', serif" font-size="16">Ichiro Kishimi</text>
+  <text x="40" y="388" fill="#6f6454" font-family="Georgia, 'Times New Roman', serif" font-size="16">Fumitake Koga</text>
+</svg>

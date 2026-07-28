@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "2019 年霸占我的首屏的应用程序"
+title:  "Apps That Took Over My Home Screen in 2019"
 subtitle: "iPhone 首屏的 Apps"
 date:   2019-12-01 12:00:45
 categories: [life]

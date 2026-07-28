@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Converse">
+  <rect width="400" height="500" fill="#f7f7f7"/>
+  <rect x="48" y="48" width="304" height="304" fill="#111111"/>
+  <circle cx="200" cy="200" r="68" fill="none" stroke="#ffffff" stroke-width="10"/>
+  <circle cx="200" cy="200" r="28" fill="#ffffff"/>
+  <text x="200" y="404" text-anchor="middle" fill="#111111" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">CONVERSE</text>
+  <text x="200" y="438" text-anchor="middle" fill="#888888" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" letter-spacing="3">CANVAS</text>
+</svg>

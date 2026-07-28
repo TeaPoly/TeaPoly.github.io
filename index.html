@@ -1,19 +1,37 @@
 ---
 layout: page
-title: Blog
-subtitle: 分享我的实践经验和生活态度。
+title: Lucky Wong
+description: Personal homepage focused on speech signal processing, embedded audio systems, NPU integration, and fixed-point quantization.
+hide_title: true
 sitemap:
   priority: 0.9
 ---
 
-<ul class="list-posts">
-    {% for post in site.posts %}
-        <li class="post-teaser">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-                <span class="post-teaser__title">{{ post.title }}</span>
-                <span class="post-teaser__date">{{ post.date | date: "%m/%d/%Y" }}</span>
-            </a>
-        </li>
-    {% endfor %}
-</ul>
+<section class="hero hero--text">
+    <h1 class="hero__title">I build speech and audio systems that move from research ideas into reliable embedded products.</h1>
+</section>
+
+<section class="plain-section inline-notes">
+    <p class="inline-notes__label">Focus</p>
+    <p class="inline-notes__text">Noise reduction, source separation, wake word detection, ASR, speaker recognition, embedded inference, NPU deployment, and fixed-point quantization porting.</p>
+</section>
+
+<section class="plain-section list-section">
+    <div class="section-head section-head--compact">
+        <h3 class="section-head__title">Articles</h3>
+        <span class="section-head__meta">{{ site.posts | size }} notes</span>
+    </div>
+
+    <ul class="list-posts">
+        {% for post in site.posts limit: 8 %}
+            <li class="post-teaser">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <span class="post-teaser__date">{{ post.date | date: "%m/%d" }}</span>
+                    <span class="post-teaser__title">{{ post.title }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
 

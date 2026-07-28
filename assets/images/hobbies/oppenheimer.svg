@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Oppenheimer">
+  <rect width="400" height="600" fill="#0d0d0d"/>
+  <circle cx="200" cy="220" r="70" fill="#f5f0e6" opacity="0.95"/>
+  <circle cx="200" cy="220" r="110" fill="none" stroke="#f5f0e6" stroke-width="2" opacity="0.35"/>
+  <text x="30" y="420" fill="#f5f0e6" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Oppenheimer</text>
+  <text x="30" y="520" fill="#8a8a8a" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2">2023</text>
+</svg>

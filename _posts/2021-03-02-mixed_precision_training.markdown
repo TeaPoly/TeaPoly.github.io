@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "如何手动支持混合精度训练"
+title:  "How to Manually Enable Mixed Precision Training"
 subtitle: "TensorFlow 1.0 版本支持混合精度训练"
 date:   2021-03-02 12:00:45
 categories: [tech]

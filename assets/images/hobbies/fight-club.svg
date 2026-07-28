@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Fight Club">
+  <rect width="400" height="600" fill="#f2efe8"/>
+  <text x="40" y="220" fill="#111111" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="64" font-weight="700">FIGHT</text>
+  <text x="40" y="300" fill="#111111" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="64" font-weight="700">CLUB</text>
+  <rect x="40" y="340" width="120" height="8" fill="#c1121f"/>
+  <text x="40" y="520" fill="#777777" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2">1999</text>
+</svg>

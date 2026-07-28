@@ -1,2 +1,21 @@
 <script src="{{ "/assets/vendor/highlight/highlight.pack.js" | prepend: site.baseurl }}"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+(function () {
+    if (!window.hljs) return;
+    hljs.initHighlightingOnLoad();
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('img').forEach(function (img) {
+            img.addEventListener('error', function () {
+                var placeholder = document.createElement('div');
+                placeholder.className = 'image-fallback';
+                placeholder.setAttribute('aria-hidden', 'true');
+                placeholder.textContent = 'Image unavailable';
+                if (img.parentNode) {
+                    img.parentNode.replaceChild(placeholder, img);
+                }
+            }, { once: true });
+        });
+    });
+})();
+</script>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Thriller">
+  <defs>
+    <linearGradient id="thrillerBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a0a0a"/>
+      <stop offset="100%" stop-color="#3b0d12"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#thrillerBg)"/>
+  <path d="M120 310c20-90 40-150 80-190 40 40 60 100 80 190" fill="none" stroke="#d62828" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="200" cy="118" r="34" fill="#f2d6c9"/>
+  <text x="28" y="360" fill="#f5e9e9" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700">Thriller</text>
+</svg>

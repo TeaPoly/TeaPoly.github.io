@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Sapiens">
+  <rect width="400" height="600" fill="#f3efe4"/>
+  <rect x="0" y="0" width="18" height="600" fill="#d9cfb8"/>
+  <circle cx="200" cy="210" r="78" fill="none" stroke="#1f1c17" stroke-width="10"/>
+  <path d="M200 132c22 34 34 58 34 78s-12 44-34 78c-22-34-34-58-34-78s12-44 34-78z" fill="#1f1c17"/>
+  <text x="48" y="390" fill="#1f1c17" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">Sapiens</text>
+  <text x="48" y="434" fill="#6d6558" font-family="Georgia, 'Times New Roman', serif" font-size="18">A Brief History of</text>
+  <text x="48" y="462" fill="#6d6558" font-family="Georgia, 'Times New Roman', serif" font-size="18">Humankind</text>
+  <text x="48" y="530" fill="#9a9182" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="1">YUVAL NOAH HARARI</text>
+</svg>

@@ -1,8 +1,7 @@
 # Site settings
-title: 茶多酚老爹
+title: Lucky Wong
 description: >
-  我是一名从事语音识别算法的软件工程师。喜欢研究语音识别、信号处理、声纹识别等语音相关的技术。致力于将前沿的语音识别算法在应用实际工程中的落地。在算法研究基础上，我也不断积累工程方面的经验，以达到两者之间较高的平衡。
-  我也是一名极简主义者，但绝非极端意义上的苦行僧，在物质依赖的社会，我只求将有限的精力放到更重要的事情上，给生活留出喘息的机会，用极简的生活方式给自己减压。
+  Audio algorithm engineer focused on speech recognition, signal processing, speaker verification, and practical engineering. I care about simple systems, calm interfaces, and long-term thinking.
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://teapoly.github.io" # the base hostname & protocol for your site

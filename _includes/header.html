@@ -1,39 +1,14 @@
 <header class="header">
-    <div class="navigation">
-        <a href="/" class="logo">{{ site.title }}</a>
+    <a href="{{ '/' | prepend: site.baseurl }}" class="header__brand" aria-label="Lucky Wong home">
+        <span class="header__avatar" aria-hidden="true"></span>
+        <span class="header__name">Lucky Wong</span>
+    </a>
 
-        <ul class="menu">
-            <li class="menu__entry"><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
-            <li class="menu__entry"><a href="{{ '/' | prepend: site.baseurl }}">Blog</a></li>
-        </ul>
-    </div>
+    <nav class="menu" aria-label="Primary">
+        <a class="menu__entry{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | prepend: site.baseurl }}">Work</a>
+        <a class="menu__entry{% if page.url == '/about/' %} is-active{% endif %}" href="{{ '/about' | prepend: site.baseurl }}">Resume</a>
+        <a class="menu__entry{% if page.url == '/hobbies/' %} is-active{% endif %}" href="{{ '/hobbies' | prepend: site.baseurl }}">Hobbies</a>
+    </nav>
 
-    <ul class="social-links">
-        {% if site.author.github %}
-            <a href="https://github.com/{{ site.author.github }}" class="social-links__entry" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
-        {% endif %}
-
-        {% if site.author.twitter %}
-            <a href="https://twitter.com/{{ site.author.twitter }}" class="social-links__entry" target="_blank">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-        {% endif %}
-
-        <a href="https://zhihu.com/people/quziba" class="social-links__entry" target="_blank">
-            <i class="fa-brands fa-zhihu"></i>
-        </a>
-
-        <a href="mailto:lekai.huang@gmail.com" class="social-links__entry" target="_blank">
-            <i class="fa fa-envelope"></i>
-        </a>
-
-        <a href="/feed.xml" class="social-links__entry" target="_blank">
-            <i class="fa fa-rss"></i>
-        </a>
-
-
-    </ul>
-
+    <div class="header__spacer" aria-hidden="true"></div>
 </header>

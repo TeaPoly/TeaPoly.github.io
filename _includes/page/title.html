@@ -1,4 +1,11 @@
-<h1 class="page-title">
-    <div class="page-title__text">{{ page.title }}</div>
-    <div class="page-title__subtitle">{{ page.subtitle }}</div>
-</h1>
+{% unless page.hide_title %}
+    <header class="page-title">
+        {% unless page.hide_kicker %}
+            <p class="page-title__kicker">Portfolio / Journal</p>
+        {% endunless %}
+        <div class="page-title__text">{{ page.title }}</div>
+        {% unless page.hide_subtitle %}
+            <div class="page-title__subtitle">{{ page.subtitle }}</div>
+        {% endunless %}
+    </header>
+{% endunless %}

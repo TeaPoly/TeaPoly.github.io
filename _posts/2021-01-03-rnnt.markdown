@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Transducer Model 改进流式语音识别"
+title:  "Improving Streaming ASR with Transducer Models"
 subtitle: "在线语音识别改进方法"
 date:   2021-01-02 15:00:45
 categories: [tech]

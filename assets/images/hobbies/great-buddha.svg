@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="The Great Buddha +">
+  <rect width="400" height="600" fill="#f4f1ea"/>
+  <circle cx="200" cy="200" r="78" fill="#e6dcc8"/>
+  <circle cx="200" cy="200" r="78" fill="none" stroke="#2c2c2c" stroke-width="6"/>
+  <circle cx="175" cy="190" r="6" fill="#2c2c2c"/>
+  <circle cx="225" cy="190" r="6" fill="#2c2c2c"/>
+  <path d="M175 230c12 14 38 14 50 0" fill="none" stroke="#2c2c2c" stroke-width="5" stroke-linecap="round"/>
+  <text x="30" y="380" fill="#1d1d1d" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700">The Great</text>
+  <text x="30" y="422" fill="#1d1d1d" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700">Buddha +</text>
+  <text x="30" y="520" fill="#8a8478" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2">2017</text>
+</svg>

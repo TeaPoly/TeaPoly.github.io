@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Thinking, Fast and Slow">
+  <rect width="400" height="600" fill="#f7f3ea"/>
+  <rect x="0" y="0" width="18" height="600" fill="#d8c7a4"/>
+  <circle cx="130" cy="190" r="54" fill="#e4572e"/>
+  <circle cx="250" cy="250" r="54" fill="#1d3557"/>
+  <text x="40" y="380" fill="#1d1a16" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Thinking,</text>
+  <text x="40" y="424" fill="#1d1a16" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Fast and Slow</text>
+  <text x="40" y="500" fill="#7a7164" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="1">DANIEL KAHNEMAN</text>
+</svg>

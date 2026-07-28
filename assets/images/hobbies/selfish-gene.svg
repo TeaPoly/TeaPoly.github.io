@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="The Selfish Gene">
+  <rect width="400" height="600" fill="#f6efe3"/>
+  <rect x="0" y="0" width="18" height="600" fill="#b7a078"/>
+  <path d="M70 160c40 20 50 70 30 110s-10 90 30 120c-50-10-90-50-90-110s30-100 30-120zm120 20c-20 40 0 80 20 120s0 90-40 130c70 0 110-50 110-120s-40-110-90-130z" fill="#2f6b4f" opacity="0.9"/>
+  <text x="40" y="420" fill="#1d1a16" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">The Selfish</text>
+  <text x="40" y="468" fill="#1d1a16" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="700">Gene</text>
+  <text x="40" y="530" fill="#7a7164" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="1">RICHARD DAWKINS</text>
+</svg>

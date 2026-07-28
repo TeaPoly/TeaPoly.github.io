@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="The Godfather">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1410"/>
+      <stop offset="55%" stop-color="#0c0a08"/>
+      <stop offset="100%" stop-color="#050403"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="48%">
+      <stop offset="0%" stop-color="#c9a227" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#bg)"/>
+  <rect width="400" height="600" fill="url(#glow)"/>
+  <path d="M200 168c-28 0-46 18-52 44-8-4-14-6-24-6-28 0-46 22-46 52 0 42 34 70 74 92 8 4 16 10 24 16 8-6 16-12 24-16 40-22 74-50 74-92 0-30-18-52-46-52-10 0-16 2-24 6-6-26-24-44-52-44z" fill="none" stroke="#c9a227" stroke-width="3" opacity="0.85"/>
+  <text x="200" y="420" text-anchor="middle" fill="#e8d5a3" font-family="Georgia, 'Times New Roman', serif" font-size="42" letter-spacing="4">THE</text>
+  <text x="200" y="478" text-anchor="middle" fill="#e8d5a3" font-family="Georgia, 'Times New Roman', serif" font-size="48" letter-spacing="3">GODFATHER</text>
+  <text x="200" y="540" text-anchor="middle" fill="#8a7a55" font-family="Georgia, 'Times New Roman', serif" font-size="14" letter-spacing="6">1972</text>
+</svg>

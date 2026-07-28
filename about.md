@@ -1,13 +1,22 @@
 ---
 layout: page
 title: About
-subtitle: 
+description: Resume of an audio algorithm engineer focused on speech recognition and practical systems.
+hide_title: true
 permalink: /about/
 ---
 
-我是一名从事语音识别算法相关的软件工程师。
+<section class="hero hero--text">
+    <p class="hero__eyebrow">Audio algorithm engineer</p>
+    <h1 class="hero__title">I work on speech recognition and audio-related systems.</h1>
+</section>
 
-致力于将前沿的语音识别算法应用于实际工程。在算法研究基础上，我也在不断的积累工程方面的经验，以达到两者之间的平衡。
+<section class="plain-section inline-notes">
+    <p class="inline-notes__label">What I do</p>
+    <p class="inline-notes__text">I turn research ideas into practical engineering work, with attention to system design, implementation details, and trade-offs.</p>
+</section>
 
-主要的研究方向包括语音识别、信号处理、声纹识别。
-
+<section class="plain-section inline-notes">
+    <p class="inline-notes__label">Interests</p>
+    <p class="inline-notes__text">Speech recognition, signal processing, speaker verification</p>
+</section>

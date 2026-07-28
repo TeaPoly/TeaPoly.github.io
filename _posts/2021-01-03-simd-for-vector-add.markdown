@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SIMD 指令集加速向量运算"
+title:  "Accelerating Vector Operations with SIMD"
 subtitle: "NEON/SSE 在向量加法上的应用"
 date:   2021-01-02 11:00:45
 categories: [tech]

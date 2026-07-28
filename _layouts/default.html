@@ -8,10 +8,16 @@
     </head>
 
     <body>
-        <div class="wrapper">
-            {% include header.html %}
+        <div class="site-frame">
+            <div class="site-shell">
+                {% include header.html %}
 
-            {{ content }}
+                <main class="site-main">
+                    {{ content }}
+                </main>
+
+                {% include footer.html %}
+            </div>
         </div>
 
         {% include externals/scripting.html %}

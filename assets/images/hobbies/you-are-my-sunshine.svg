@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="You Are My Sunshine">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2c14e"/>
+      <stop offset="48%" stop-color="#f08a3a"/>
+      <stop offset="100%" stop-color="#d4552a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#sky)"/>
+  <circle cx="286" cy="118" r="54" fill="#ffe08a" opacity="0.95"/>
+  <circle cx="286" cy="118" r="78" fill="none" stroke="#ffe08a" stroke-width="3" opacity="0.35"/>
+  <text x="36" y="286" fill="#1f140c" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">You Are My</text>
+  <text x="36" y="332" fill="#1f140c" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Sunshine</text>
+</svg>

@@ -3,7 +3,7 @@ layout: default
 ---
 {% include category/title.html %}
 
-<ul class="list-posts">
+<ul class="list-posts list-posts--category">
     {% assign empty_category = true %}
     {% for post in site.posts %}
         {% if post.categories contains page.category %}

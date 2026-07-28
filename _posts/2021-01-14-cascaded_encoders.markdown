@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "级联编码器 (Cascaded Encoders) 在流+离线混合 ASR 模型"
+title:  "Cascaded Encoders in Hybrid Streaming and Offline ASR"
 subtitle: "流式+离线语音识别"
 date:   2021-01-14 08:00:45
 categories: [tech]

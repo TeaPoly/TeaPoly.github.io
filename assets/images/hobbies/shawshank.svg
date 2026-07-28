@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="The Shawshank Redemption">
+  <rect width="400" height="600" fill="#1c2430"/>
+  <rect x="70" y="80" width="260" height="220" fill="none" stroke="#c5d0de" stroke-width="8"/>
+  <rect x="110" y="120" width="180" height="140" fill="#2b3645"/>
+  <text x="40" y="380" fill="#e8eef6" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">The Shawshank</text>
+  <text x="40" y="420" fill="#e8eef6" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Redemption</text>
+  <text x="40" y="520" fill="#8b98a8" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2">1994</text>
+</svg>

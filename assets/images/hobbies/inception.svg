@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Inception">
+  <rect width="400" height="600" fill="#0b1320"/>
+  <path d="M80 420 L200 120 L320 420 Z" fill="none" stroke="#d4a017" stroke-width="6"/>
+  <path d="M120 420 L200 220 L280 420 Z" fill="none" stroke="#8a6d1d" stroke-width="4"/>
+  <text x="40" y="500" fill="#f0e6c8" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700">Inception</text>
+  <text x="40" y="545" fill="#8b8268" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2">2010</text>
+</svg>

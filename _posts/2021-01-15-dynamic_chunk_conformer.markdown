@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "动态 Chunk Conformer 在线+离线混合 ASR 模型"
+title:  "Dynamic Chunk Conformer for Hybrid Online-Offline ASR"
 subtitle: "Dynamic-Chunk + Two-pass Conformer ASR"
 date:   2021-01-16 06:00:45
 categories: [tech]

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Sgt. Pepper's Lonely Hearts Club Band">
+  <rect width="400" height="400" fill="#f3e7c7"/>
+  <rect x="0" y="0" width="400" height="70" fill="#d94f3d"/>
+  <rect x="0" y="330" width="400" height="70" fill="#2f6f4e"/>
+  <circle cx="90" cy="200" r="36" fill="#f0c94d"/>
+  <circle cx="170" cy="200" r="36" fill="#5aa9e6"/>
+  <circle cx="250" cy="200" r="36" fill="#e07a5f"/>
+  <circle cx="330" cy="200" r="36" fill="#81b29a"/>
+  <text x="20" y="48" fill="#fff8e8" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700">Sgt. Pepper's</text>
+  <text x="20" y="372" fill="#f4ffe8" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700">Lonely Hearts Club Band</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Schindler's List">
+  <rect width="400" height="600" fill="#111111"/>
+  <circle cx="200" cy="210" r="10" fill="#c1121f"/>
+  <path d="M190 220c8 40 12 70 10 120" fill="none" stroke="#c1121f" stroke-width="3"/>
+  <text x="40" y="400" fill="#f2f2f2" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Schindler's</text>
+  <text x="40" y="446" fill="#f2f2f2" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">List</text>
+  <text x="40" y="520" fill="#888888" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" letter-spacing="2">1993</text>
+</svg>

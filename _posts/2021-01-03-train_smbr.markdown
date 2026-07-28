@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "序列区分训练改进流式语音识别"
+title:  "Improving Streaming ASR with Sequence-Discriminative Training"
 subtitle: "在线语音识别改进方法"
 date:   2021-01-02 14:00:45
 categories: [tech]

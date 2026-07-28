@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "极简主义真的给了我喘息的宁静吗？"
+title:  "Did Minimalism Give Me Room to Breathe?"
 subtitle: "践行极简主义后的思考"
 date:   2021-01-02 12:00:45
 categories: [life]
