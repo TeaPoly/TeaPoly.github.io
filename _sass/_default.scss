@@ -316,7 +316,7 @@ strong {
 
 .cave-posts__link {
     display: grid;
-    grid-template-columns: 84px minmax(0, 1fr) 18px;
+    grid-template-columns: 84px minmax(0, 1.4fr) 18px;
     gap: 28px;
     align-items: center;
     padding: 18px 0;
@@ -1066,7 +1066,7 @@ pre code {
     }
 
     .cave-posts__link {
-        grid-template-columns: 56px minmax(0, 1fr) 16px;
+        grid-template-columns: 56px minmax(0, 1.35fr) 16px;
         gap: 12px;
         padding: 15px 0;
     }
