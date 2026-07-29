@@ -33,17 +33,17 @@ a {
 
 .inline-notes a,
 .content a {
-    color: #5e8ee6;
+    color: inherit;
     text-decoration: underline;
-    text-decoration-color: rgba(94, 142, 230, 0.28);
+    text-decoration-color: rgba(20, 21, 23, 0.2);
     text-underline-offset: 0.12em;
 }
 
 .inline-notes a:hover,
 .content a:hover {
     opacity: 1;
-    color: #4f7fd9;
-    text-decoration-color: rgba(79, 127, 217, 0.5);
+    color: inherit;
+    text-decoration-color: rgba(20, 21, 23, 0.34);
 }
 
 p {
@@ -623,45 +623,38 @@ strong {
     margin-top: 2px;
 }
 
-.item-shelf__row--compact {
+.fashion-brand-row {
     display: flex;
-    align-items: center;
-    gap: 24px;
-    min-height: 44px;
+    align-items: flex-start;
+    gap: 14px;
     overflow-x: auto;
+    padding: 2px 0 6px;
 }
 
-.item-shelf__row--brands {
-    align-items: center;
-    gap: 18px;
-}
-
-.fashion-inline {
+.fashion-brand {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 6px;
     flex: 0 0 auto;
+    min-width: 104px;
     color: var(--text);
-    white-space: nowrap;
 }
 
-.fashion-inline:hover {
+.fashion-brand:hover {
     opacity: 0.8;
 }
 
-.fashion-inline--logo {
-    width: 96px;
-    height: 96px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.94);
-    box-shadow: 0 10px 22px rgba(20, 21, 23, 0.07);
+.fashion-brand img {
+    display: block;
+    width: 104px;
+    height: 76px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 6px 14px rgba(20, 21, 23, 0.05);
+    object-fit: contain;
 }
 
-.fashion-inline--logo img {
-    display: block;
-    width: 54px;
-    height: 54px;
-}
 
 .fashion-inline__logo {
     font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
@@ -1012,6 +1005,20 @@ pre code {
     .item-shelf__row--brands {
         gap: 16px;
     }
+
+    .fashion-brand-row {
+        gap: 10px;
+    }
+
+    .fashion-brand {
+        min-width: 90px;
+    }
+
+    .fashion-brand img {
+        width: 90px;
+        height: 66px;
+    }
+
 
     .fashion-inline__caption {
         font-size: 0.7rem;

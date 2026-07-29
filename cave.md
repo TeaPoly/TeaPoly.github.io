@@ -30,7 +30,6 @@ permalink: /cave/
         {% endfor %}
     </ul>
 
-
 </section>
 
 <section class="plain-section cave-hobbies">
@@ -145,27 +144,23 @@ permalink: /cave/
                 <span class="section-head__meta">5 labels</span>
             </div>
 
-            <div class="item-shelf item-shelf--labels" role="list">
-                <div class="item-shelf__row item-shelf__row--compact item-shelf__row--brands" role="listitem">
-                    <a class="fashion-inline fashion-inline--logo" href="https://www.jjjjound.com/" target="_blank" rel="noopener noreferrer" aria-label="JJJJound">
-                        <img src="{{ '/assets/images/hobbies/jjjjound.svg' | prepend: site.baseurl }}" alt="JJJJound" width="80" height="80" loading="lazy">
-                    </a>
-                    <a class="fashion-inline fashion-inline--logo" href="https://mdnsonline.com/" target="_blank" rel="noopener noreferrer" aria-label="MADNESS">
-                        <img src="{{ '/assets/images/hobbies/madness.svg' | prepend: site.baseurl }}" alt="MADNESS" width="80" height="80" loading="lazy">
-                    </a>
-                    <a class="fashion-inline fashion-inline--logo" href="https://www.vans.com/" target="_blank" rel="noopener noreferrer" aria-label="Vans">
-                        <img src="{{ '/assets/images/hobbies/vans.svg' | prepend: site.baseurl }}" alt="Vans" width="80" height="80" loading="lazy">
-                    </a>
-                    <a class="fashion-inline fashion-inline--logo" href="https://www.converse.com/" target="_blank" rel="noopener noreferrer" aria-label="Converse">
-                        <img src="{{ '/assets/images/hobbies/converse.svg' | prepend: site.baseurl }}" alt="Converse" width="80" height="80" loading="lazy">
-                    </a>
-                    <a class="fashion-inline fashion-inline--logo" href="https://retawstyle.com/" target="_blank" rel="noopener noreferrer" aria-label="retaW">
-                        <img src="{{ '/assets/images/hobbies/retaw.svg' | prepend: site.baseurl }}" alt="retaW" width="80" height="80" loading="lazy">
-                    </a>
-                </div>
+            <div class="fashion-brand-row" role="list">
+                <a class="fashion-brand" href="https://www.jjjjound.com/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="JJJJound">
+                    <img src="{{ '/assets/images/hobbies/jjjjound.svg' | prepend: site.baseurl }}" alt="JJJJound" width="88" height="88" loading="lazy">
+                </a>
+                <a class="fashion-brand" href="https://mdnsonline.com/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="MADNESS">
+                    <img src="{{ '/assets/images/hobbies/madness.svg' | prepend: site.baseurl }}" alt="MADNESS" width="88" height="88" loading="lazy">
+                </a>
+                <a class="fashion-brand" href="https://www.vans.com/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Vans">
+                    <img src="{{ '/assets/images/hobbies/vans.svg' | prepend: site.baseurl }}" alt="Vans" width="88" height="88" loading="lazy">
+                </a>
+                <a class="fashion-brand" href="https://www.converse.com/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Converse">
+                    <img src="{{ '/assets/images/hobbies/converse.svg' | prepend: site.baseurl }}" alt="Converse" width="88" height="88" loading="lazy">
+                </a>
+                <a class="fashion-brand" href="https://goods.retaw.tokyo/" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="retaW">
+                    <img src="{{ '/assets/images/hobbies/retaw.svg' | prepend: site.baseurl }}" alt="retaW" width="88" height="88" loading="lazy">
+                </a>
             </div>
         </article>
     </div>
 </section>
-
-
