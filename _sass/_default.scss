@@ -156,8 +156,8 @@ strong {
 
 .menu__entry.is-active {
     color: var(--text);
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 8px 18px rgba(20, 21, 23, 0.08);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 2px 8px rgba(20, 21, 23, 0.04);
 }
 
 .contact-link {
@@ -1037,6 +1037,10 @@ pre code {
         overflow-x: auto;
         padding: 0;
         padding-bottom: 4px;
+    }
+
+    .menu__entry.is-active {
+        box-shadow: 0 1px 4px rgba(20, 21, 23, 0.03);
     }
 
     .contact-link,
