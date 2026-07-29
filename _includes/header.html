@@ -1,13 +1,12 @@
 <header class="header">
-    <a href="{{ '/' | prepend: site.baseurl }}" class="header__brand" aria-label="Lucky Wong home">
+    <a href="{{ '/about/' | prepend: site.baseurl }}" class="header__brand" aria-label="Lucky Wong resume">
         <span class="header__avatar" aria-hidden="true"></span>
         <span class="header__name">Lucky Wong</span>
     </a>
 
     <nav class="menu" aria-label="Primary">
-        <a class="menu__entry{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | prepend: site.baseurl }}">Work</a>
         <a class="menu__entry{% if page.url == '/about/' %} is-active{% endif %}" href="{{ '/about' | prepend: site.baseurl }}">Resume</a>
-        <a class="menu__entry{% if page.url == '/hobbies/' %} is-active{% endif %}" href="{{ '/hobbies' | prepend: site.baseurl }}">Hobbies</a>
+        <a class="menu__entry{% if page.url == '/cave/' %} is-active{% endif %}" href="{{ '/cave' | prepend: site.baseurl }}">Cave</a>
     </nav>
 
     <div class="header__spacer" aria-hidden="true"></div>

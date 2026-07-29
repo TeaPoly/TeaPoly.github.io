@@ -3,26 +3,38 @@ layout: default
 ---
 {% include category/title.html %}
 
-<ul class="list-posts list-posts--category">
-    {% assign empty_category = true %}
-    {% for post in site.posts %}
-        {% if post.categories contains page.category %}
-            <li class="post-teaser">
-                <a href="{{ post.url | prepend: site.baseurl }}">
-                    <span class="post-teaser__title">{{ post.title }}</span>
-                    <span class="post-teaser__date">{{ post.date | date: "%m/%d/%Y" }}</span>
-                </a>
+<section class="plain-section list-section cave-articles">
+    <div class="section-head section-head--compact cave-articles__head">
+        <h3 class="section-head__title">Articles</h3>
+        <div class="cave-years" role="tablist" aria-label="Article categories">
+            <a class="cave-years__item{% if page.category == nil %} is-active{% endif %}" href="{{ '/cave/' | prepend: site.baseurl }}">All</a>
+            <span class="cave-years__sep" aria-hidden="true">·</span>
+            <a class="cave-years__item{% if page.category == 'tech' %} is-active{% endif %}" href="{{ '/categories/tech/' | prepend: site.baseurl }}">Tech</a>
+            <span class="cave-years__sep" aria-hidden="true">·</span>
+            <a class="cave-years__item{% if page.category == 'life' %} is-active{% endif %}" href="{{ '/categories/life/' | prepend: site.baseurl }}">Life</a>
+        </div>
+    </div>
+
+    <ul class="cave-posts" aria-label="Articles">
+        {% assign empty_category = true %}
+        {% for post in site.posts %}
+            {% if post.categories contains page.category %}
+                <li class="cave-posts__item">
+                    <a class="cave-posts__link" href="{{ post.url | prepend: site.baseurl }}">
+                        <span class="cave-posts__date">{{ post.date | date: "%m/%d" }}</span>
+                        <span class="cave-posts__title">{{ post.title }}</span>
+                        <span class="cave-posts__arrow" aria-hidden="true">›</span>
+                    </a>
+                </li>
+                {% assign empty_category = false %}
+            {% endif %}
+        {% endfor %}
+
+        {% if empty_category %}
+            <li class="empty-post-list">
+                It seems that there are no articles in this category. Please go back <a href="{{ '/cave/' | prepend: site.baseurl }}">Cave</a> to see all articles.
             </li>
-            {% assign empty_category = false %}
         {% endif %}
-    {% endfor %}
+    </ul>
+</section>
 
-    {% if empty_category %}
-        <li class="empty-post-list">
-            It seems that there are no articles on that category,
-            please go back <a href="/">home</a> to see the full list of articles.
-        </li>
-    {% endif %}
-</ul>
-
-{% include page/explore.html %}

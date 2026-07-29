@@ -112,47 +112,29 @@ permalink: /hobbies/
             <span class="section-head__meta">5 labels</span>
         </div>
 
-        <ul class="fashion-grid">
-            <li>
-                <a class="fashion-card" href="https://www.jjjjound.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="fashion-card__cover">
-                        <img src="{{ '/assets/images/hobbies/jjjjound.svg' | prepend: site.baseurl }}" alt="JJJJound" width="400" height="500" loading="lazy">
-                    </span>
-                    <span class="fashion-card__caption">JJJJound · Clothing</span>
+        <div class="item-shelf item-shelf--labels" role="list">
+            <div class="item-shelf__row item-shelf__row--compact" role="listitem">
+                <a class="fashion-inline" href="https://www.jjjjound.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="fashion-inline__logo">JJJJound</span>
+                    <span class="fashion-inline__caption">Clothing</span>
                 </a>
-            </li>
-            <li>
-                <a class="fashion-card" href="https://mdnsonline.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="fashion-card__cover">
-                        <img src="{{ '/assets/images/hobbies/madness.svg' | prepend: site.baseurl }}" alt="MADNESS" width="400" height="500" loading="lazy">
-                    </span>
-                    <span class="fashion-card__caption">MADNESS · Clothing</span>
+                <a class="fashion-inline" href="https://mdnsonline.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="fashion-inline__logo">MADNESS</span>
+                    <span class="fashion-inline__caption">Clothing</span>
                 </a>
-            </li>
-            <li>
-                <a class="fashion-card" href="https://www.vans.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="fashion-card__cover">
-                        <img src="{{ '/assets/images/hobbies/vans.svg' | prepend: site.baseurl }}" alt="Vans" width="400" height="500" loading="lazy">
-                    </span>
-                    <span class="fashion-card__caption">Vans · Skate</span>
+                <a class="fashion-inline" href="https://www.vans.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="fashion-inline__logo">Vans</span>
+                    <span class="fashion-inline__caption">Skate</span>
                 </a>
-            </li>
-            <li>
-                <a class="fashion-card" href="https://www.converse.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="fashion-card__cover">
-                        <img src="{{ '/assets/images/hobbies/converse.svg' | prepend: site.baseurl }}" alt="Converse" width="400" height="500" loading="lazy">
-                    </span>
-                    <span class="fashion-card__caption">Converse · Canvas</span>
+                <a class="fashion-inline" href="https://www.converse.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="fashion-inline__logo">Converse</span>
+                    <span class="fashion-inline__caption">Canvas</span>
                 </a>
-            </li>
-            <li>
-                <a class="fashion-card" href="https://retawstyle.com/" target="_blank" rel="noopener noreferrer">
-                    <span class="fashion-card__cover">
-                        <img src="{{ '/assets/images/hobbies/retaw.svg' | prepend: site.baseurl }}" alt="retaW" width="400" height="500" loading="lazy">
-                    </span>
-                    <span class="fashion-card__caption">retaW · Fragrance</span>
+                <a class="fashion-inline" href="https://retawstyle.com/" target="_blank" rel="noopener noreferrer">
+                    <span class="fashion-inline__logo">retaW</span>
+                    <span class="fashion-inline__caption">Fragrance</span>
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </article>
 </section>
