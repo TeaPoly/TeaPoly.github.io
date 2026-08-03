@@ -22,7 +22,7 @@ permalink: /categories/tech/
         {% for post in site.categories.tech %}
             <li class="cave-posts__item">
                 <a class="cave-posts__link" href="{{ post.url | prepend: site.baseurl }}">
-                    <span class="cave-posts__date">{{ post.date | date: "%m/%d" }}</span>
+                    <span class="cave-posts__date">{{ post.date | date: "%Y/%m/%d" }}</span>
                     <span class="cave-posts__title">{{ post.title }}</span>
                     <span class="cave-posts__arrow" aria-hidden="true">›</span>
                 </a>
