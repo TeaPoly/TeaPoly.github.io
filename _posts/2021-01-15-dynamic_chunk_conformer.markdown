@@ -109,7 +109,7 @@ def subsequent_chunk_mask(size, chunk_size):
 这部分的核心其实是 Depthwise Conv1D 的结构，如果你此前接触过 FSMN 或者 SVDF ，理解起来就很简单了。我的理解是该结构考虑的是当前帧特征和过去、未来有限长的特征关系，通过有限脉冲响应方程（或称逐通道卷积）来完成，ESPnet 中大部分的实验采用的 kernel size 为 15 的大小，即左右分别看 7 帧，当然这部分的延迟是由右看引起的，假设我们有12层 Conformer 模型，前端 Subsamping 为 40 ms 的话，关于 Conv 这部分的总延迟就是  $ 12*7*40 = 3360ms  $ ，即 3.36 秒的延时，目前针对这部分延迟基本上是简单地移除右看部分，变成 Causal Conv Module，[部分代码](https://github.com/mobvoi/wenet/blob/ee43964afd8fe1c984f030124075b9d1e463b444/wenet/transformer/convolution.py#L44) 如下:
 
 ```python
-# self.lorder is used to distinguish if it's a causal convolution,
+        # self.lorder is used to distinguish if it's a causal convolution,
         # if self.lorder > 0: it's a causal convolution, the input will be
         #    padded with self.lorder frames on the left in forward.
         # else: it's a symmetrical convolution
