@@ -63,6 +63,17 @@ img.is-broken-image {
     display: none !important;
 }
 
+.image-fallback {
+    margin: 18px 0 22px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(20, 21, 23, 0.08);
+    border-bottom: 1px solid rgba(20, 21, 23, 0.08);
+    color: rgba(20, 21, 23, 0.34);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
 img.is-broken-image {
     display: none;
 }
@@ -1052,11 +1063,11 @@ pre code {
     max-width: 700px;
     margin: 0;
     color: #171717;
-    font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-size: clamp(2.25rem, 3.2vw, 3.25rem);
-    line-height: 1.04;
-    letter-spacing: -0.045em;
-    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.1rem, 3.1vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.036em;
+    font-weight: 600;
     text-align: left;
 }
 
@@ -1084,26 +1095,30 @@ pre code {
 
 .content h2,
 .content h3 {
-    margin-top: 28px;
-    font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 600;
+    margin-top: 34px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 500;
     letter-spacing: -0.03em;
 }
 
 .content--essay h2 {
-    font-size: 1.12rem;
-    line-height: 1.26;
-    margin: 22px 0 8px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-size: 1.56rem;
+    line-height: 1.12;
+    margin: 48px 0 14px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(20, 21, 23, 0.12);
 }
 
 .content--essay h3 {
-    font-size: 0.99rem;
-    line-height: 1.24;
-    margin: 14px 0 6px;
-    font-weight: 600;
-    letter-spacing: -0.014em;
+    font-size: 1.22rem;
+    line-height: 1.18;
+    margin: 32px 0 10px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(20, 21, 23, 0.12);
 }
 
 .content--essay > p:first-child {
@@ -1134,7 +1149,7 @@ pre code {
 }
 
 .content--essay p {
-    margin: 0 0 10px;
+    margin: 0 0 14px;
 }
 
 .content--essay p + p {
@@ -1143,16 +1158,16 @@ pre code {
 
 .content--essay ul,
 .content--essay ol {
-    margin: 6px 0 16px 1.15em;
+    margin: 8px 0 18px 1.15em;
     padding: 0;
 }
 
 .content--essay li + li {
-    margin-top: 4px;
+    margin-top: 5px;
 }
 
 .content--essay blockquote {
-    margin: 34px auto 36px;
+    margin: 36px auto 38px;
     padding: 0;
     max-width: 640px;
     border: 0;

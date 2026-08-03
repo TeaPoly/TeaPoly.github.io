@@ -7,7 +7,9 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('img').forEach(function (img) {
-            img.addEventListener('error', function () {
+            function replaceWithFallback() {
+                if (img.dataset.replaced === 'true') return;
+                img.dataset.replaced = 'true';
                 var placeholder = document.createElement('div');
                 placeholder.className = 'image-fallback';
                 placeholder.setAttribute('aria-hidden', 'true');
@@ -16,9 +18,17 @@
                 img.removeAttribute('title');
                 img.classList.add('is-broken-image');
                 if (img.parentNode) {
-                    img.parentNode.insertBefore(placeholder, img.nextSibling);
-                    img.style.display = 'none';
+                    img.parentNode.replaceChild(placeholder, img);
                 }
+            }
+
+            if (img.complete && img.naturalWidth === 0) {
+                replaceWithFallback();
+                return;
+            }
+
+            img.addEventListener('error', function () {
+                replaceWithFallback();
             }, { once: true });
         });
 
