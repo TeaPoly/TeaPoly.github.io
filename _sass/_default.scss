@@ -969,13 +969,13 @@ pre code {
 
 .post-layout {
     display: grid;
-    grid-template-columns: 140px minmax(0, 720px);
-    justify-content: start;
-    gap: 116px;
+    grid-template-columns: minmax(140px, 180px) minmax(0, 720px) minmax(140px, 180px);
+    justify-content: center;
+    gap: 48px;
     align-items: start;
     max-width: 1320px;
     margin: 0 auto;
-    padding: 28px 88px 0 36px;
+    padding: 28px 56px 0;
 }
 
 .post-layout__toc {
@@ -984,7 +984,11 @@ pre code {
     align-self: start;
     min-height: 1px;
     justify-self: start;
-    margin-left: -18px;
+    margin-left: 0;
+}
+
+.post-layout__article {
+    grid-column: 2;
 }
 
 .post-layout__home {
@@ -1037,11 +1041,14 @@ pre code {
 
 .post-layout__article {
     min-width: 0;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .post-hero {
     margin-top: 18px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .post-hero__title {
@@ -1058,7 +1065,7 @@ pre code {
 
 .post-meta {
     max-width: 700px;
-    margin: 14px 0 0;
+    margin: 14px auto 0;
 }
 
 .post-meta__date {
@@ -1070,7 +1077,7 @@ pre code {
 
 .content {
     max-width: 700px;
-    margin: 30px 0 0;
+    margin: 30px auto 0;
     font-family: Georgia, 'Times New Roman', serif;
 }
 
