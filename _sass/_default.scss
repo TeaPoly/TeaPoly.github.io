@@ -292,7 +292,7 @@ pre code {
 }
 
 .page-title {
-    margin: 88px 0 28px;
+    margin: 56px 0 12px;
 }
 
 .page-title__kicker {
@@ -479,7 +479,16 @@ pre code {
 }
 
 .cave-articles__head {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
+}
+
+.section-head__title {
+    display: block;
+}
+
+.section-head__meta,
+.cave-more {
+    display: none;
 }
 
 .cave-years {
@@ -512,28 +521,6 @@ pre code {
 .cave-years__item.is-active:hover {
     opacity: 1;
     color: rgba(20, 21, 23, 0.86);
-}
-
-.cave-more {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-top: 12px;
-    color: rgba(20, 21, 23, 0.42);
-    font-family: 'IBM Plex Mono', 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
-    font-size: 0.84rem;
-}
-
-.cave-more__link {
-    color: inherit;
-}
-
-.cave-more__link.is-active {
-    color: rgba(20, 21, 23, 0.86);
-}
-
-.cave-more__sep {
-    color: rgba(20, 21, 23, 0.18);
 }
 
 .hobby-bento {

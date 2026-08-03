@@ -9,8 +9,8 @@ permalink: /cave/
 <section class="plain-section list-section cave-articles">
     <div class="section-head section-head--compact cave-articles__head">
         <h3 class="section-head__title">Articles</h3>
-        <div class="cave-years" role="tablist" aria-label="Article years">
-            <a class="cave-years__item is-active" href="{{ '/cave/' | prepend: site.baseurl }}" aria-selected="true">All</a>
+        <div class="cave-years" role="tablist" aria-label="Article filters">
+            <a class="cave-years__item is-active" href="{{ '/all/' | prepend: site.baseurl }}" aria-selected="true">All</a>
             <span class="cave-years__sep" aria-hidden="true">·</span>
             <a class="cave-years__item" href="{{ '/categories/tech/' | prepend: site.baseurl }}" aria-selected="false">Tech</a>
             <span class="cave-years__sep" aria-hidden="true">·</span>
