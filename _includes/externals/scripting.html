@@ -11,9 +11,13 @@
                 var placeholder = document.createElement('div');
                 placeholder.className = 'image-fallback';
                 placeholder.setAttribute('aria-hidden', 'true');
-                placeholder.textContent = 'Image unavailable';
+                placeholder.textContent = 'Missing image';
+                img.removeAttribute('alt');
+                img.removeAttribute('title');
+                img.classList.add('is-broken-image');
                 if (img.parentNode) {
-                    img.parentNode.replaceChild(placeholder, img);
+                    img.parentNode.insertBefore(placeholder, img.nextSibling);
+                    img.style.display = 'none';
                 }
             }, { once: true });
         });
