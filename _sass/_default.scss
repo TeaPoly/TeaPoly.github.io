@@ -1152,8 +1152,10 @@ code {
     color: #2b3440;
 }
 
-pre,
-.highlight {
+div.language-python.highlighter-rouge,
+div.language-c.highlighter-rouge,
+div.language-text.highlighter-rouge,
+div.highlighter-rouge {
     margin: 30px 0;
     padding: 24px 26px;
     overflow: auto;
@@ -1169,56 +1171,30 @@ pre,
     -webkit-overflow-scrolling: touch;
 }
 
-pre > code,
-.highlight > code,
-pre > .hljs,
-.highlight > .hljs {
-    display: block;
+.highlighter-rouge .highlight,
+.highlighter-rouge pre,
+.highlighter-rouge code,
+.highlighter-rouge .hljs,
+.highlighter-rouge table,
+.highlighter-rouge tbody,
+.highlighter-rouge tr,
+.highlighter-rouge td {
     margin: 0;
     padding: 0;
     border: 0;
+    border-radius: 0;
     background: transparent !important;
+    color: inherit;
+    box-shadow: none !important;
+    font: inherit;
     line-height: 1.72;
-    color: #46423c;
-    font-family: inherit;
-    font-size: inherit;
-    box-shadow: none;
     overflow: visible;
 }
 
-pre code,
-.highlight code,
-pre .hljs,
-.highlight .hljs {
-    padding: 0;
-    border: 0;
-    background: transparent !important;
-    line-height: 1.72;
-    color: #46423c;
-    font-family: inherit;
-    font-size: inherit;
-    box-shadow: none;
-}
-
-pre > code > table,
-pre > .hljs > table,
-.highlight > code > table,
-.highlight > .hljs > table,
-pre > code > tbody,
-pre > .hljs > tbody,
-.highlight > code > tbody,
-.highlight > .hljs > tbody,
-pre > code > tr,
-pre > .hljs > tr,
-.highlight > code > tr,
-.highlight > .hljs > tr,
-pre > code > td,
-pre > .hljs > td,
-.highlight > code > td,
-.highlight > .hljs > td {
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
+.highlighter-rouge pre,
+.highlighter-rouge code,
+.highlighter-rouge .hljs {
+    display: block;
 }
 
 .hljs-comment,
