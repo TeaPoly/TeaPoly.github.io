@@ -1,8 +1,9 @@
 <script src="{{ "/assets/vendor/highlight/highlight.pack.js" | prepend: site.baseurl }}"></script>
 <script>
 (function () {
-    if (!window.hljs) return;
-    hljs.initHighlightingOnLoad();
+    if (window.hljs) {
+        hljs.initHighlightingOnLoad();
+    }
 
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('img').forEach(function (img) {
@@ -16,6 +17,34 @@
                 }
             }, { once: true });
         });
+
+        var toc = document.getElementById('post-toc');
+        var article = document.querySelector('.post-layout__article .content');
+        if (toc && article) {
+            var headings = article.querySelectorAll('h2, h3');
+            if (headings.length) {
+                headings.forEach(function (heading, index) {
+                    if (!heading.id) {
+                        heading.id = heading.textContent.trim().toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, '-').replace(/^-+|-+$/g, '') || ('section-' + index);
+                    }
+                    var link = document.createElement('a');
+                    link.href = '#' + heading.id;
+                    link.textContent = heading.textContent.trim();
+                    link.className = heading.tagName.toLowerCase() === 'h3' ? 'post-toc__item post-toc__item--sub' : 'post-toc__item';
+                    toc.appendChild(link);
+                });
+            } else {
+                var tocParent = toc.parentNode;
+                if (tocParent) {
+                    tocParent.style.display = 'block';
+                }
+                toc.innerHTML = '';
+                var homeLink = document.querySelector('.post-layout__home');
+                if (homeLink) {
+                    homeLink.style.display = 'block';
+                }
+            }
+        }
     });
 })();
 </script>

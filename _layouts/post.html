@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-{% include post/title.html %}
-
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -15,10 +13,25 @@ layout: default
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-<div class="content">
-    {{ content }}
+<div class="post-layout post-layout--minimal">
+    <aside class="post-layout__toc" aria-label="Article navigation">
+        <a class="post-layout__home" href="{{ '/cave/' | prepend: site.baseurl }}">← Home</a>
+        <nav id="post-toc" class="post-layout__nav"></nav>
+    </aside>
+
+    <article class="post-layout__article">
+        <header class="post-hero" id="post-hero">
+            <h1 class="post-hero__title">{{ page.title }}</h1>
+            <div class="post-meta">
+                <div class="post-meta__date">{{ page.date | date: "%B %-d, %Y" }}</div>
+            </div>
+        </header>
+
+        <div class="content content--essay">
+            {{ content }}
+        </div>
+
+        {% include externals/disqus.html %}
+    </article>
 </div>
 
-{% include post/about.html %}
-
-{% include externals/disqus.html %}
